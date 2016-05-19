@@ -14,8 +14,6 @@ stock bool StartBleeding(int client)
 	{
 		SetEntityHealth(client, health);
 		i_bleeding[client] = GetConVarInt(g_hBleedingTime);
-		
-		if (health < 1) KillPlayer(client);
 	}
 }
 
