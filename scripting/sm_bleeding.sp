@@ -18,7 +18,7 @@ Handle 	g_hBleedingBorder = null,
 public Plugin myinfo =
 {
 	author = "Hejter",
-	name = "[CSGO] Bleeding",
+	name = "[CSS/CSGO] Bleeding",
 	version = PL_VERSION,
 	url = "https://github.com/Heyter/Bleeding",
 };
