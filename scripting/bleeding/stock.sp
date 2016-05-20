@@ -42,24 +42,3 @@ stock bool KillPlayer(int client)
 	ForcePlayerSuicide(client);
 	Reset_Var(client);
 }
-
-stock bool IsValid(int client)
-{
-	if (0 < client && client <= MaxClients && IsClientInGame(client) && IsPlayerAlive(client))
-	{
-		return true;
-	}
-	else return false;
-}
-
-stock bool Reset_Var(int client)
-{
-	b_bleeding[client] = false;
-	i_bleeding[client] = GetConVarInt(g_hBleedingTime);
-}
-
-stock bool KillPlayer(int client)
-{
-	ForcePlayerSuicide(client);
-	Reset_Var(client);
-}
