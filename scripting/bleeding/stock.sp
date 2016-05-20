@@ -6,7 +6,7 @@ stock bool StartBleeding(int client)
     else if (i_bleeding[client] > 0)
     {
         i_bleeding[client]--;
-        PrintHintText(client, "<font color='#ff0000'>Кровотечение через %d</font>", i_bleeding[client]);
+        //PrintHintText(client, "<font color='#ff0000'>Кровотечение через %d</font>", i_bleeding[client]);
     }
    
     else if (i_bleeding[client] == 0)
