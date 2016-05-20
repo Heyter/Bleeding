@@ -1,25 +1,23 @@
 stock bool StartBleeding(int client)
 {
-	int health = GetClientHealth(client) - GetConVarInt(g_hBleedingHealth);
-	
-	if (i_bleeding[client] > 0)
-	{
-		i_bleeding[client]--;
-		PrintHintText(client, "<font color='#ff0000'>Кровотечение через %d</font>", i_bleeding[client]);
-	}
-	
-	else if (i_bleeding[client] == 0 && health <= GetConVarInt(g_hBleedingBorder))
-	{
-		if (health < 1)
-		{
-			KillPlayer(client);
-		}
-		else
-		{
-			SetEntityHealth(client, health);
-			i_bleeding[client] = GetConVarInt(g_hBleedingTime);
-		}
-	}
+    int health = GetClientHealth(client);
+    if(health > GetConVarInt(g_hBleedingBorder)) b_bleeding[client] = false;
+
+    else if (i_bleeding[client] > 0)
+    {
+        i_bleeding[client]--;
+        PrintHintText(client, "<font color='#ff0000'>Кровотечение через %d</font>", i_bleeding[client]);
+    }
+   
+    else if (i_bleeding[client] == 0)
+    {
+        if ((health -= GetConVarInt(g_hBleedingHealth)) > 0)
+        {
+            SetEntityHealth(client, health);
+            i_bleeding[client] = GetConVarInt(g_hBleedingTime);
+        }
+        else KillPlayer(client);
+    }
 }
 
 stock bool IsValid(int client)

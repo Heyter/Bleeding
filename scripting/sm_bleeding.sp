@@ -3,7 +3,7 @@
 #include <autoexecconfig>
 #pragma newdecls required
 
-#define PL_VERSION "0.01"
+#define PL_VERSION "0.03"
 
 bool b_bleeding[MAXPLAYERS + 1];
 int i_bleeding[MAXPLAYERS + 1];
